@@ -31,15 +31,15 @@ int main(){
 
 	for(int i=0; i < 30; i++){
 
-          if(yourcity[i] == '\n'){
+			if(yourcity[i] == '\n'){
 
-             yourcity[i] = '\0';
+			yourcity[i] = '\0';
 
-		break;
+			break;
 
-		}
+			}
 
- 	}
+	}
 
 	printf("Hello %s\n\n", yourcity);
 

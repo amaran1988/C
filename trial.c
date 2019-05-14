@@ -1,51 +1,54 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
+
 struct product {
 
-  float price;
-  char productname[30];
+		float price;
+		char productname[30];
 
 };
 
 int main(){
 
-  struct product *pProducts;
+		struct product *pProducts;
 
-  int i,j;
+		int i,j;
 
-  int numofProducts;
+		int numproducts;i
 
-  printf( "HI there" );
+		printf( "HI there" );
 
-  scanf("%d", &numofProducts);
+		scanf("%d", &numproducts);
 
-  pProducts = (struct product *) malloc(numofProducts * sizeof(struct product));
+		pProducts = (struct product *) malloc(numproducts * sizeof(struct product));
 
-  for(i = 0; i < numofProducts; i++){
+		for(i = 0; i < numproducts; i++){
 
-    printf("Enter the name of the product:");
+				printf("Enter the name of the product:");
 
-    scanf("%s", (pProducts+i) -> productname);
+				scanf("%s", (pProducts+i) -> productname);
 
-    printf("Enter the price of the product: ");
+				printf("Enter the price of the product: ");
 
-    scanf("%f", &(pProducts+i) -> price);
+				scanf("%f", &(pProducts+i) -> price);
 
-  }
+		}
 
-  printf("Products stored\n\n");
+		printf("Products stored\n\n");
+		printf("List of Products:\n");
 
-  printf("List of Products:\n");
+		for(j = 0; j < numproducts; j++){
 
-  for(j = 0; j < numofProducts; j++){
+				printf("%d.\t%s\t%.2f\n",j+1,(pProducts+j) -> productname, (pProducts+j) -> price);
 
-      printf("%d.\t%s\t%.2f\n",j+1,(pProducts+j) -> productname, (pProducts+j) -> price);
+		}
 
-  }
+		free(pProducts);
 
-  free(pProducts);
-
-  return 0;
+		return 0;
 
 }
+
+
